@@ -1,9 +1,20 @@
-# Configure Azure provider
+variable "subscription_id" {
+  default = "12345678-1234-1234-1234-1234567892"
+}
+
+variable "ventureName" {
+  default = "12345678-1234-1234-1234-1234567892"
+}
+
+variable "tenant_id" {
+  default = "12345678-1234-1234-1234-1234567892"
+}
+
 provider "azurerm" {
-  subscription_id = "${var.azure_subscription_id}"
-  client_id       = "${var.azure_client_id}"
-  client_secret   = "${var.azure_client_secret}"
-  tenant_id       = "${var.azure_tenant_id}"
+    use_msi         = true
+    subscription_id = var.subscription_id
+    tenant_id       = var.tenant_id
+    features {}
 }
 
 # create a resource group if it doesn't exist
